@@ -1855,7 +1855,6 @@ St. Stephen town,South Carolina,17ef339f,1824
 Federal Heights city,Colorado,17f27ec0,13598
 Fremont village,Wisconsin,17f2c192,647
 Kinnelon borough,New Jersey,17f4a401,9852
-Buffalo Chip town,South Dakota,17f62abb,0
 Lawton city,North Dakota,17f8a292,31
 Guion town,Arkansas,1804a976,81
 Clarkson city,Kentucky,1805fe49,887
@@ -11808,7 +11807,6 @@ Des Moines village,New Mexico,9a3e392d,121
 Westfir city,Oregon,9a3f7fb9,265
 Garden City city,Missouri,9a437a2a,1638
 Oak Grove town,Louisiana,9a4b1e54,1518
-Carlton Landing town,Oklahoma,9a4c37d7,0
 Mineola village,New York,9a4e9497,19546
 Joliet city,Illinois,9a53ef5f,146673
 Inglewood village,Nebraska,9a562483,314
@@ -12399,7 +12397,6 @@ Culdesac city,Idaho,a2321a78,384
 Dellwood city,Missouri,a23621bd,4994
 Platteville town,Colorado,a2370687,3000
 McNab town,Arkansas,a2392aa0,63
-Carbonate town,Colorado,a2403be2,0
 Cresskill borough,New Jersey,a241bc03,8626
 Clarksville city,Arkansas,a2450fdb,9721
 Glenpool city,Oklahoma,a2469c86,14027
@@ -20471,7 +20468,6 @@ Landaff town,New Hampshire,ec712f65,442
 Lincoln town,New Hampshire,b3165c65,1775
 Lisbon town,New Hampshire,7f08a694,1587
 Littleton town,New Hampshire,f0393fe8,5902
-Livermore town,New Hampshire,815eaf2b,0
 Lyman town,New Hampshire,aa357cb0,532
 Lyme town,New Hampshire,9e56eb41,1685
 Monroe town,New Hampshire,c98c1f51,807
@@ -21625,7 +21621,6 @@ Ferdinand town,Vermont,e8058fb2,32
 Granby town,Vermont,aa8d0c67,82
 Guildhall town,Vermont,4c7219bf,245
 Lemington town,Vermont,041e7641,97
-Lewis town,Vermont,a6960ccf,0
 Lunenburg town,Vermont,521b198f,1322
 Maidstone town,Vermont,22365602,193
 Norton town,Vermont,f9fc4e8c,156
@@ -27869,10 +27864,8 @@ Vinton township,Nebraska,dc5adf10,82
 Yale township,Nebraska,a000fdf3,57
 Cambridge township,New Hampshire,ba4e58dc,7
 Dixville township,New Hampshire,46e5dae1,11
-Kilkenny township,New Hampshire,c6bd8a0a,0
 Millsfield township,New Hampshire,d226f516,21
 Odell township,New Hampshire,cd50ab2e,4
-Success township,New Hampshire,538f2710,0
 Buena Vista township,New Jersey,0716dd42,7221
 Egg Harbor township,New Jersey,4ebe9e3a,42105
 Galloway township,New Jersey,7c2917a7,35487
@@ -29321,7 +29314,6 @@ Orthell township,North Dakota,46316f55,18
 Pherrin township,North Dakota,604f9746,337
 Pleasant Valley township,North Dakota,d9255c34,179
 Rainbow township,North Dakota,98b32f5a,22
-Rock Island township,North Dakota,dfab7d5d,0
 Round Prairie township,North Dakota,a4f8deb2,175
 Sauk Valley township,North Dakota,02896016,85
 Scorio township,North Dakota,81d8a293,52
@@ -31268,16 +31260,13 @@ Square Lake UT,Maine,d67bc382,541
 East Central Franklin UT,Maine,adae9fb9,771
 North Franklin UT,Maine,5643a901,58
 South Franklin UT,Maine,70f38358,65
-West Central Franklin UT,Maine,43d0cd97,0
 Wyman UT,Maine,0d4b4796,84
 Central Hancock UT,Maine,578227fd,114
 East Hancock UT,Maine,3cdbc6c4,90
-Marshall Island UT,Maine,888f478b,0
 Northwest Hancock UT,Maine,feae5376,2
 Unity UT,Maine,1edbf0c6,41
 Criehaven UT,Maine,ef3511c9,1
 Muscle Ridge Islands UT,Maine,c83f1fe1,6
-Louds Island UT,Maine,e72d069e,0
 Milton UT,Maine,1394e16f,140
 North Oxford UT,Maine,64b988c7,23
 South Oxford UT,Maine,91ad8879,571
@@ -31286,13 +31275,11 @@ East Central Penobscot UT,Maine,6edc6588,328
 Kingman UT,Maine,649e23c2,169
 North Penobscot UT,Maine,cb5bd75e,439
 Prentiss UT,Maine,baddd1c2,204
-Twombly Ridge UT,Maine,3724d61a,0
 Whitney UT,Maine,27000a2e,5
 Blanchard UT,Maine,0ac82fec,94
 Northeast Piscataquis UT,Maine,7731ea9e,266
 Northwest Piscataquis UT,Maine,9271b6bc,143
 Southeast Piscataquis UT,Maine,b093b2a2,243
-Perkins UT,Maine,6ffdfd6f,0
 Central Somerset UT,Maine,ebd8114a,323
 Northeast Somerset UT,Maine,a4e28782,374
 Northwest Somerset UT,Maine,9e0dc270,59
@@ -31327,13 +31314,10 @@ Effie UT,Minnesota,081a5580,219
 Liberty UT,Minnesota,e0b3a950,63
 Little Sand Lake UT,Minnesota,a4fca484,347
 Northeast Itasca UT,Minnesota,23cc1a14,1178
-Klondike UT,Minnesota,d26a09ef,0
 McKinley UT,Minnesota,fe356ee3,36
-North Red River UT,Minnesota,02b6768f,0
 Peatland UT,Minnesota,4d73d914,8
 Lake No. 1 UT,Minnesota,a92884e1,158
 Lake No. 2 UT,Minnesota,4c3ae315,2151
-Mud Lake UT,Minnesota,9f7b6f29,0
 North Roseau UT,Minnesota,bae4e1f9,131
 Northwest Roseau UT,Minnesota,3a263fc3,22
 Southeast Roseau UT,Minnesota,cd5ddb4f,219
@@ -31349,7 +31333,6 @@ Northwest St. Louis UT,Minnesota,1f9d54e6,306
 Potshot Lake UT,Minnesota,6f8756f6,77
 Sand Lake UT,Minnesota,520dacae,1075
 Whiteface Reservoir UT,Minnesota,0fb0a48b,483
-Chautauqua Lake UT,New York,41411059,0
 Central Adams UT,North Dakota,03cb8b71,49
 East Adams UT,North Dakota,176df3bf,168
 Holden UT,North Dakota,9d5bc6a8,19
@@ -31478,7 +31461,6 @@ Central Perkins UT,South Dakota,fcf2e605,28
 Duck Creek UT,South Dakota,d7ce9e82,14
 Jones UT,South Dakota,26145cd9,6
 Northeast Perkins UT,South Dakota,49d4c5d7,114
-Pleasant Valley UT,South Dakota,d36f23ce,0
 South Perkins UT,South Dakota,daf32614,162
 White Hill UT,South Dakota,7210e106,6
 Gassman UT,South Dakota,786a4bf1,30
@@ -31520,8 +31502,10 @@ West Forks plantation,Maine,faccb29d,58
 Baring plantation,Maine,70afe81e,239
 Codyville plantation,Maine,1a3477f7,23
 Grand Lake Stream plantation,Maine,f6e66189,105
+Penobscot Indian Island Reservation,Maine,78d2ac04,584
 Passamaquoddy Indian Township Reservation,Maine,55aefa33,689
 Passamaquoddy Pleasant Point Reservation,Maine,ceae2b23,719
+Oil Springs Reservation,New York,59abc0cf,1
 Allegany Reservation,New York,094ffc88,1025
 St. Regis Mohawk Reservation,New York,7dceb9fb,3324
 Tuscarora Nation Reservation,New York,1e36dbbb,1195

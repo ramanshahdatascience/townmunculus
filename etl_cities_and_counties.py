@@ -14,10 +14,16 @@ def hash_place(row):
             .encode('utf-8')).hexdigest()[:8]
 
 
+def get_subset(x, code):
+    return x[x['SUMLEV'] == code]\
+            [x['POPESTIMATE2020'] > 0]\
+            [['NAME', 'STNAME', 'POPESTIMATE2020', 'id']]
+
+
 x = pd.read_csv('source_data/SUB-EST2020_ALL.csv', encoding='latin_1')
 x['id'] = x.apply(hash_place, axis=1)
 
-cities = x[x['SUMLEV'] == 162][['NAME', 'STNAME', 'POPESTIMATE2020', 'id']]
+cities = get_subset(x, 162)
 
 # A few cities (11 at the time of writing, the biggest was about 9k people)
 # appear split between two rows with different county or place FIPS codes. A
@@ -67,8 +73,7 @@ clean_cities = pd.merge(city_pops, cities[['NAME', 'STNAME', 'id']],
 # Reservation. This might be thorough enough that I'd never find an exception
 # in pratice.  All but town and township seem already covered in the type 162
 # wrangling:
-minor_civil_divisions = x[(x['SUMLEV'] == 61)]\
-    [['NAME', 'STNAME', 'POPESTIMATE2020', 'id']]
+minor_civil_divisions = get_subset(x, 61)
 minor_civil_divisions['last_word'] = minor_civil_divisions['NAME'].str\
     .split(' ').str.get(-1)
 cvb_last_words = pd.DataFrame.from_dict(
@@ -126,7 +131,7 @@ print(f'{tt_counts[tt_counts > 1].sum()} minor civil divisions are '
 
 # Process counties. This is straightforward! Note that it includes the Alaskan
 # Census areas (with last word "Area").
-counties = x[x['SUMLEV'] == 50][['NAME', 'STNAME', 'POPESTIMATE2020', 'id']]
+counties = get_subset(x, 50)
 county_counts = counties['id'].value_counts()
 county_dupe_ids = county_counts[county_counts > 1].index
 assert len(county_dupe_ids) == 0
