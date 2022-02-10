@@ -17,12 +17,24 @@ def hash_place(row):
 def get_subset(x, code):
     return x[x['SUMLEV'] == code]\
             [x['POPESTIMATE2020'] > 0]\
-            [['NAME', 'STNAME', 'POPESTIMATE2020', 'id']]
-
+            [['NAME', 'STNAME', 'POPESTIMATE2020', 'id']]\
+            .rename(columns={'NAME': 'name',
+                             'STNAME': 'state',
+                             'POPESTIMATE2020': 'pop_2020'})\
+            [['name', 'state', 'id', 'pop_2020']]
 
 x = pd.read_csv('source_data/SUB-EST2020_ALL.csv', encoding='latin_1')
 x['id'] = x.apply(hash_place, axis=1)
 
+# Grab the type 170 city/county metropolitan governments, which include the
+# governments of Milford CT, Athens GA, Augusta GA, Indianapolis IN, Louisville
+# KY, and Nashville TN.
+municipal_governments = get_subset(x, 170)
+mg_counts = municipal_governments['id'].value_counts()
+mg_dupe_ids = mg_counts[mg_counts > 1].index
+assert len(mg_dupe_ids) == 0
+
+# Most of the cities show up as type 162 incorporated places.
 cities = get_subset(x, 162)
 
 # A few cities (11 at the time of writing, the biggest was about 9k people)
@@ -32,13 +44,9 @@ city_counts = cities['id'].value_counts()
 city_dupe_ids = city_counts[city_counts > 1].index
 print(f'{len(city_dupe_ids)} city duplicates found. Combining as necessary.')
 city_pops = cities.groupby('id').sum()
-clean_cities = pd.merge(city_pops, cities[['NAME', 'STNAME', 'id']],
+clean_cities = pd.merge(city_pops, cities[['name', 'state', 'id']],
         how='inner', left_index=True, right_on='id')\
-    .drop_duplicates()\
-    .rename(columns={'NAME': 'name',
-                     'STNAME': 'state',
-                     'POPESTIMATE2020': 'pop_2020'})\
-    [['name', 'state', 'id', 'pop_2020']]
+    .drop_duplicates()
 
 # I found one town (Vernon, CT) with a meaningful point of contact on LinkedIn
 # that only showed up under type 61.  Townships are important some places
@@ -74,18 +82,14 @@ clean_cities = pd.merge(city_pops, cities[['NAME', 'STNAME', 'id']],
 # in pratice.  All but town and township seem already covered in the type 162
 # wrangling:
 minor_civil_divisions = get_subset(x, 61)
-minor_civil_divisions['last_word'] = minor_civil_divisions['NAME'].str\
+minor_civil_divisions['last_word'] = minor_civil_divisions['name'].str\
     .split(' ').str.get(-1)
 cvb_last_words = pd.DataFrame.from_dict(
     {'last_word': ['city', 'village', 'borough', 'Parish', 'Borough']})
 cvb_candidates = pd.merge(minor_civil_divisions, cvb_last_words,
     how='inner', on='last_word')
 cvbs = cvb_candidates[
-    (~cvb_candidates['id'].isin(clean_cities['id']))]\
-    .rename(columns={'NAME': 'name',
-                     'STNAME': 'state',
-                     'POPESTIMATE2020': 'pop_2020'})\
-    [['name', 'state', 'id', 'pop_2020']]
+    (~cvb_candidates['id'].isin(clean_cities['id']))]
 assert len(cvbs) == 0
 
 # On inspection, UTs (South Dakota) and plantations (Maine) are easy to add.
@@ -104,15 +108,13 @@ tt_last_words = pd.DataFrame.from_dict(
 tt_candidates = pd.merge(minor_civil_divisions, tt_last_words,
     how='inner', on='last_word')
 tts = tt_candidates[
-    (~tt_candidates['id'].isin(clean_cities['id']))]\
-    .rename(columns={'NAME': 'name',
-                     'STNAME': 'state',
-                     'POPESTIMATE2020': 'pop_2020'})
+    (~tt_candidates['id'].isin(clean_cities['id']))]
 tt_counts = tts['id'].value_counts()
 tt_singleton_ids = pd.Series(tt_counts[tt_counts == 1].index, name='id')
 tt_singletons = pd.merge(tts, tt_singleton_ids,
     how='inner', on='id')\
     [['name', 'state', 'id', 'pop_2020']]
+
 # TODO: There is some problematic duplication in concatenating these
 # town/township singletons with the cities, as sometimes one ends up with
 # coextensive cities and towns. For example:
@@ -126,29 +128,21 @@ tt_singletons = pd.merge(tts, tt_singleton_ids,
 print(f'{tt_counts[tt_counts > 1].sum()} minor civil divisions are ' 
         'name-duplicated townships, etc., and are not included yet.')
 
-
-# TODO: Type 170 joint county governments (some of these in Georgia are big)?
-
 # Process counties. This is straightforward! Note that it includes the Alaskan
 # Census areas (with last word "Area").
 counties = get_subset(x, 50)
 county_counts = counties['id'].value_counts()
 county_dupe_ids = county_counts[county_counts > 1].index
 assert len(county_dupe_ids) == 0
-clean_counties = counties\
-    .rename(columns={'NAME': 'name',
-                     'STNAME': 'state',
-                     'POPESTIMATE2020': 'pop_2020'})\
-    [['name', 'state', 'id', 'pop_2020']]
 
 cities_and_friends = pd.concat([clean_cities, tt_singletons])
 cities_and_friends.to_csv('cities.csv', header=True, index=False)
-clean_counties.to_csv('counties.csv', header=True, index=False)
+counties.to_csv('counties.csv', header=True, index=False)
 
 # Finally: Virginia has coextensive city/county jurisdictions, which we need to
 # fix up in the merged city/county list. drop_duplicates() here would not drop
 # rows with different populations, so this provides a sanity check.
-everything = pd.concat([cities_and_friends, clean_counties]).drop_duplicates()
+everything = pd.concat([cities_and_friends, counties]).drop_duplicates()
 
 # Check primary key, the id, for duplicate ids with different populations.
 everything_counts = everything['id'].value_counts()
