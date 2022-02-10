@@ -36,12 +36,14 @@ assert len(mg_dupe_ids) == 0
 
 # Most of the cities show up as type 162 incorporated places.
 cities = get_subset(x, 162)
+cities = cities[~cities['name'].str.contains('(balance)', regex=False)]
 
 # A few cities (11 at the time of writing, the biggest was about 9k people)
 # appear split between two rows with different county or place FIPS codes. A
 # fair idea is to just add them up.
 city_counts = cities['id'].value_counts()
 city_dupe_ids = city_counts[city_counts > 1].index
+print(cities[cities['id'].isin(city_dupe_ids)])
 print(f'{len(city_dupe_ids)} city duplicates found. Combining as necessary.')
 city_pops = cities.groupby('id').sum()
 clean_cities = pd.merge(city_pops, cities[['name', 'state', 'id']],
@@ -135,7 +137,8 @@ county_counts = counties['id'].value_counts()
 county_dupe_ids = county_counts[county_counts > 1].index
 assert len(county_dupe_ids) == 0
 
-cities_and_friends = pd.concat([clean_cities, tt_singletons])
+cities_and_friends = pd.concat(
+    [municipal_governments, clean_cities, tt_singletons])
 cities_and_friends.to_csv('cities.csv', header=True, index=False)
 counties.to_csv('counties.csv', header=True, index=False)
 
