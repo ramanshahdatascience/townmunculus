@@ -29,6 +29,18 @@ def get_subset(x, code):
             [['name', 'state', 'id', 'pop_2020']]
 
 x = pd.read_csv('source_data/SUB-EST2020_ALL.csv', encoding='latin_1')
+
+# Looking at Wikipedia, there seems to be a 2697-person Washington Township,
+# OH, labeled by county FIPS 159 as in Union County (which has another
+# Washington Township that checks out vis a vis Wikipedia) but place code 81242
+# colliding with a substantial Washington Township (Franklin County).  I
+# believe that this Washington Township has a complicated exclave structure
+# involving the City of Dublin.  It breaks the deduplication logic below.
+# We'll resort to dropping this one pathological record.
+bad_rows = x[x['STATE'] == 39][x['COUNTY'] == 159][x['COUSUB'] == 81242]
+assert len(bad_rows.index) == 2  # Both type 61 and 71 records
+x = x.drop(labels=bad_rows.index)
+
 x['id'] = x.apply(hash_place, axis=1)
 
 # Process counties. This is straightforward! Note that it includes the Alaskan
@@ -128,11 +140,70 @@ tt_singletons = pd.merge(tts, tt_singleton_ids,
     how='inner', on='id')\
     [['name', 'state', 'id', 'pop_2020']]
 
-# TODO: Now clean up the duplicated city-like entities, labeling them by county
-# to disambiguate as possible.
+# Now clean up the duplicated city-like entities, labeling them by county or
+# place FIPS to disambiguate.
 duplicate_ids = city_dupe_ids.union(tt_dupe_ids)
 duplicates = x[x['id'].isin(duplicate_ids)]
-# duplicates.to_csv('duplicates.csv')
+duplicates_with_county_name = pd.merge(
+    duplicates[['STATE', 'COUNTY', 'PLACE', 'NAME', 'STNAME',
+                'POPESTIMATE2020', 'id']],
+    x[x['SUMLEV'] == 50][['STATE', 'COUNTY', 'NAME']],
+    how='left', on=['STATE', 'COUNTY'])\
+    .rename(columns={
+        'NAME_x': 'name',
+        'NAME_y': 'county_name',
+        'POPESTIMATE2020': 'pop_2020'})
+
+labeled_duplicates = []
+for key, group in duplicates_with_county_name.groupby(['id', 'pop_2020']):
+    # The reason we group by population, not county name, is to deal with the
+    # type-162 cities (which don't come with a county FIPS) and make sure
+    # they're accounted for with a nice county labeling (and if not, to hear
+    # about it).
+    if group['county_name'].nunique() == 0:
+        # One of the Reno TX cities and one of the St Anthony MN cities has no
+        # county assignment in this database and we'll label them with their place
+        # FIPS code
+        assert group['PLACE'].nunique() == 1  # Bated breath
+        name = group['name'].values[0]
+        state_name = group['STNAME'].values[0]
+        place_fips = group['PLACE'].values[0]
+        augmented_name = '{} (place {})'.format(name, place_fips)
+        new_id = hashlib.md5('{}, {}'.format(augmented_name, state_name)\
+            .encode('utf-8')).hexdigest()[:8]
+        record = {'name': augmented_name, 'state': state_name, 'id': new_id,
+                  'pop_2020': key[1]}
+        labeled_duplicates.append(record)
+    elif group['county_name'].nunique() == 1:
+        # The typical case.  The .nunique() drops NaNs. In this case, we've
+        # cleanly disambiguated a record with a county label, sometimes paired
+        # with un-county-labeled type 162 city names.
+        name = group['name'].values[0]
+        state_name = group['STNAME'].values[0]
+        county_name = group['county_name'].value_counts().index.values[0]
+        augmented_name = '{} ({})'.format(name, county_name)
+        new_id = hashlib.md5('{}, {}'.format(augmented_name, state_name)\
+            .encode('utf-8')).hexdigest()[:8]
+        record = {'name': augmented_name, 'state': state_name, 'id': new_id,
+                  'pop_2020': key[1]}
+        labeled_duplicates.append(record)
+    else:
+        # There are 18 tiny places that have the same name and population as
+        # another place in the same state, but in a different county. No big
+        # deal, as long as all of them have distinct, non-null county names.
+        # Let's check:
+        assert group['county_name'].nunique() == len(group['county_name'].index)
+        name = group['name'].values[0]
+        state_name = group['STNAME'].values[0]
+        for county_name in group['county_name'].values:
+            augmented_name = '{} ({})'.format(name, county_name)
+            new_id = hashlib.md5('{}, {}'.format(augmented_name, state_name)\
+                .encode('utf-8')).hexdigest()[:8]
+            record = {'name': augmented_name, 'state': state_name, 'id': new_id,
+                      'pop_2020': key[1]}
+            labeled_duplicates.append(record)
+
+clean_duplicates = pd.DataFrame(labeled_duplicates)
 
 # TODO: There is some problematic duplication in concatenating these
 # town/township singletons with the cities, as sometimes one ends up with
@@ -151,8 +222,12 @@ duplicates = x[x['id'].isin(duplicate_ids)]
 # last word), population, and state match.
 
 cities_and_friends = pd.concat(
-    [municipal_governments, clean_cities, tt_singletons])\
+    [municipal_governments, clean_cities, tt_singletons, clean_duplicates])\
     .sort_values(by=['state', 'name'], axis='index')
+caf_counts = cities_and_friends['id'].value_counts()
+caf_dupe_ids = caf_counts[caf_counts > 1].index
+assert len(caf_dupe_ids) == 0
+
 cities_and_friends.to_csv('cities.csv', header=True, index=False)
 counties.to_csv('counties.csv', header=True, index=False)
 
