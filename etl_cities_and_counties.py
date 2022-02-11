@@ -21,7 +21,6 @@ def hash_place(row):
 
 def get_subset(x, code):
     return x[x['SUMLEV'] == code]\
-            [x['POPESTIMATE2020'] > 0]\
             [['NAME', 'STNAME', 'POPESTIMATE2020', 'id']]\
             .rename(columns={'NAME': 'name',
                              'STNAME': 'state',
@@ -39,7 +38,7 @@ x = pd.read_csv('source_data/SUB-EST2020_ALL.csv', encoding='latin_1')
 # We'll resort to dropping this one pathological record.
 bad_rows = x[x['STATE'] == 39][x['COUNTY'] == 159][x['COUSUB'] == 81242]
 assert len(bad_rows.index) == 2  # Both type 61 and 71 records
-x = x.drop(labels=bad_rows.index)
+x = x.drop(labels=bad_rows.index)[x['POPESTIMATE2020'] > 0]
 
 x['id'] = x.apply(hash_place, axis=1)
 
