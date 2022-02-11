@@ -19,6 +19,11 @@ def hash_place(row):
             .encode('utf-8')).hexdigest()[:8]
 
 
+def dupe_check_hash(row):
+    return hashlib.md5(
+        '{}, {}: {}'.format(row['first_words'], row['state'], row['pop_2020'])\
+        .encode('utf-8')).hexdigest()
+
 def get_subset(x, code):
     return x[x['SUMLEV'] == code]\
             [['NAME', 'STNAME', 'POPESTIMATE2020', 'id']]\
@@ -204,21 +209,15 @@ for key, group in duplicates_with_county_name.groupby(['id', 'pop_2020']):
 
 clean_duplicates = pd.DataFrame(labeled_duplicates)
 
-# TODO: There is some problematic duplication in concatenating these
-# town/township singletons with the cities, as sometimes one ends up with
-# coextensive cities and towns. For example:
+# There is some problematic duplication in concatenating these town/township
+# singletons with the cities, as sometimes one ends up with coextensive cities
+# and towns. For example:
 # (City/town)
 # 16922:Danbury city,Connecticut,de6bf110,84317
 # 19488:Danbury town,Connecticut,0e6214df,84317
 # (Municipal gov/county)
 # Chattahoochee County,Georgia,aef36e51,10551
 # Cusseta-Chattahoochee County unified government,Georgia,7309df8c,10551
-# To give a sense of scale, an ad hoc export of cities and counties with >10k
-# people and degenerate populations (not all of which are like this; some are
-# accidents) had 817 rows.
-
-# We might want some deduplication logic checking if a susbtring (excepting the
-# last word), population, and state match.
 
 cities_and_friends = pd.concat(
     [municipal_governments, clean_cities, tt_singletons, clean_duplicates])\
@@ -227,7 +226,30 @@ caf_counts = cities_and_friends['id'].value_counts()
 caf_dupe_ids = caf_counts[caf_counts > 1].index
 assert len(caf_dupe_ids) == 0
 
-cities_and_friends.to_csv('cities.csv', header=True, index=False)
+# Find ids of towns and townships that are shadowed by cities other entities so
+# we can deduplicate them: we look for all records where name, state, and
+# population are identical except for the last (city/village/town) word.
+caf_scratch = cities_and_friends.copy()
+caf_scratch['first_words'] = caf_scratch['name'].str.rsplit(n=1).str.get(0)
+caf_scratch['dupe_check_hash'] = caf_scratch.apply(dupe_check_hash, axis=1)
+caf_scratch['town_like'] = caf_scratch['name'].str.contains('town', regex=False)
+ids_to_exclude = []
+for key, group in caf_scratch.groupby('dupe_check_hash'):
+    assert len(group.index) in (1, 2)
+    if len(group.index) == 2:
+        if group['town_like'].sum() == 1:
+            ids_to_exclude.extend(
+                group[group['town_like'] == True]['id'].values)
+        elif group['town_like'].sum() > 1:
+            # Arbitrary choice for Cicero town vs township, IL
+            ids_to_exclude.append(group.iloc[1]['id'])
+        else:
+            raise Exception()
+
+caf_deduped = cities_and_friends[
+    ~cities_and_friends['id'].isin(ids_to_exclude)]
+
+caf_deduped.to_csv('cities.csv', header=True, index=False)
 counties.to_csv('counties.csv', header=True, index=False)
 
 # Finally: Virginia has identically named, coextensive city/county
@@ -237,7 +259,7 @@ counties.to_csv('counties.csv', header=True, index=False)
 # TODO: There are yet more duplicates that might hamper an integrated
 # city/county database, such as a vestigial Philiadelphia County coextensive
 # with Philadelphia City.
-everything = pd.concat([cities_and_friends, counties])\
+everything = pd.concat([caf_deduped, counties])\
     .drop_duplicates()\
     .sort_values(by=['state', 'name'], axis='index')
 

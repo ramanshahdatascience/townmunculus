@@ -1957,7 +1957,6 @@ Yampa town,Colorado,19267842,463
 Yuma city,Colorado,ff255f7b,3497
 Andover town,Connecticut,d64a1e6a,3228
 Ansonia city,Connecticut,134627c0,18525
-Ansonia town,Connecticut,ef5ad817,18525
 Ashford town,Connecticut,c06fc113,4246
 Avon town,Connecticut,96a66425,18220
 Bantam borough,Connecticut,96f7ce9d,725
@@ -1972,10 +1971,8 @@ Bolton town,Connecticut,78842319,4855
 Bozrah town,Connecticut,2bb2af2a,2712
 Branford town,Connecticut,81ae3532,27736
 Bridgeport city,Connecticut,ec6fc872,143525
-Bridgeport town,Connecticut,9f875988,143525
 Bridgewater town,Connecticut,bf1b8218,1632
 Bristol city,Connecticut,a7f67b6a,59734
-Bristol town,Connecticut,10497086,59734
 Brookfield town,Connecticut,6f68d1e4,16900
 Brooklyn town,Connecticut,16c41eeb,8280
 Burlington town,Connecticut,3c39e9db,9748
@@ -1993,12 +1990,10 @@ Cornwall town,Connecticut,af343173,1360
 Coventry town,Connecticut,dd3700ad,12389
 Cromwell town,Connecticut,fa4f73b3,13772
 Danbury city,Connecticut,de6bf110,84317
-Danbury town,Connecticut,0e6214df,84317
 Danielson borough,Connecticut,6022f5c4,4006
 Darien town,Connecticut,5a00fcd1,21693
 Deep River town,Connecticut,5302abbf,4419
 Derby city,Connecticut,152ad502,12257
-Derby town,Connecticut,95e35b6b,12257
 Durham town,Connecticut,d49959f0,7137
 East Granby town,Connecticut,45caffae,5120
 East Haddam town,Connecticut,52035620,8956
@@ -2029,7 +2024,6 @@ Haddam town,Connecticut,55b7328a,8150
 Hamden town,Connecticut,c0265d6a,60294
 Hampton town,Connecticut,6f783a00,1841
 Hartford city,Connecticut,566df833,121535
-Hartford town,Connecticut,439b04c8,121535
 Hartland town,Connecticut,aa6d64d8,2113
 Harwinton town,Connecticut,026baa5d,5400
 Hebron town,Connecticut,0d7fa0ef,9480
@@ -2048,27 +2042,20 @@ Manchester town,Connecticut,7bf3ff22,57362
 Mansfield town,Connecticut,486cb7f5,25417
 Marlborough town,Connecticut,8ac09c24,6303
 Meriden city,Connecticut,79305445,58981
-Meriden town,Connecticut,9a9b9c98,58981
 Middlebury town,Connecticut,13ec3c5e,7829
 Middlefield town,Connecticut,6bb8a81c,4350
 Middletown city,Connecticut,97a1acf2,46013
-Middletown town,Connecticut,fa9dc1fd,46013
 Milford city,Connecticut,71d22a0e,54781
-Milford town,Connecticut,579f42a4,54781
 Monroe town,Connecticut,8e654619,19328
 Montville town,Connecticut,aa4453ed,18463
 Morris town,Connecticut,f480dd2e,2250
 Naugatuck borough,Connecticut,57f8f790,30905
-Naugatuck town,Connecticut,1db688f9,30905
 New Britain city,Connecticut,bb84aa0e,72198
-New Britain town,Connecticut,7c0f08cf,72198
 New Canaan town,Connecticut,1aceda38,20115
 New Fairfield town,Connecticut,3f86fe06,13792
 New Hartford town,Connecticut,12c7e80e,6639
 New Haven city,Connecticut,4d1d23d2,130801
-New Haven town,Connecticut,d243601e,130801
 New London city,Connecticut,bb5f4575,26870
-New London town,Connecticut,2a60ae1b,26870
 New Milford town,Connecticut,49b1684f,26683
 Newington town,Connecticut,34aa1647,29868
 Newtown borough,Connecticut,45ca7d2c,1953
@@ -2079,9 +2066,7 @@ North Canaan town,Connecticut,4d71254b,3235
 North Haven town,Connecticut,fa7d1537,23556
 North Stonington town,Connecticut,be982f91,5197
 Norwalk city,Connecticut,1e7f852a,88655
-Norwalk town,Connecticut,b1d0570f,88655
 Norwich city,Connecticut,7d162223,38619
-Norwich town,Connecticut,6abac75a,38619
 Old Lyme town,Connecticut,fbe00be9,7280
 Old Saybrook town,Connecticut,3d6da849,10028
 Orange town,Connecticut,2699d416,13882
@@ -2104,7 +2089,6 @@ Scotland town,Connecticut,b44ae3d0,1664
 Seymour town,Connecticut,9d365ba9,16326
 Sharon town,Connecticut,862421f9,2691
 Shelton city,Connecticut,189d69fd,40957
-Shelton town,Connecticut,58e72bbb,40957
 Sherman town,Connecticut,6995def7,3610
 Simsbury town,Connecticut,a7add8d6,25437
 Somers town,Connecticut,bfa77f24,10741
@@ -2114,7 +2098,6 @@ Southington town,Connecticut,a0a10551,43829
 Sprague town,Connecticut,4d7cb3bc,2851
 Stafford town,Connecticut,706d186c,11834
 Stamford city,Connecticut,e5be6104,131397
-Stamford town,Connecticut,4cc831d0,131397
 Sterling town,Connecticut,e0c5cea4,3764
 Stonington borough,Connecticut,4137fd58,874
 Stonington town,Connecticut,d0a2f4cc,18566
@@ -2124,7 +2107,6 @@ Thomaston town,Connecticut,134a4275,7505
 Thompson town,Connecticut,613dbc3a,9371
 Tolland town,Connecticut,c524258e,14567
 Torrington city,Connecticut,92986a91,33870
-Torrington town,Connecticut,bcfd6414,33870
 Trumbull town,Connecticut,96ee77ef,35438
 Union town,Connecticut,aceb908f,844
 Vernon town,Connecticut,d02f7507,29400
@@ -2133,12 +2115,10 @@ Wallingford town,Connecticut,a3fb18d6,44076
 Warren town,Connecticut,1866dbd2,1389
 Washington town,Connecticut,c37f7b5f,3419
 Waterbury city,Connecticut,36562bae,106826
-Waterbury town,Connecticut,d7da4436,106826
 Waterford town,Connecticut,360b7b98,18865
 Watertown town,Connecticut,063645eb,21517
 West Hartford town,Connecticut,4fe1bf77,62868
 West Haven city,Connecticut,132bd55b,54367
-West Haven town,Connecticut,dbb44ab0,54367
 Westbrook town,Connecticut,bc9cd5d3,6842
 Weston town,Connecticut,ec1a953d,10204
 Westport town,Connecticut,2837edd4,28444
@@ -3402,7 +3382,6 @@ Altamont city,Illinois,c239cc13,2350
 Alto Pass village,Illinois,3c2d1399,360
 Alto township,Illinois,1dd13265,525
 Alton city,Illinois,0f5f3b7a,26049
-Alton township,Illinois,04610b0b,26049
 Altona village,Illinois,08f7b3d2,490
 Alvan village,Illinois,f53f2c15,246
 Amboy city,Illinois,5dfaafea,2287
@@ -3560,7 +3539,6 @@ Berreman township,Illinois,cfe0b447,147
 Berry township,Illinois,e0182a3d,337
 Berwick township,Illinois,cd2dec4f,300
 Berwyn city,Illinois,77997570,53701
-Berwyn township,Illinois,21190029,53701
 Bethalto village,Illinois,63322ed0,9201
 Bethany village,Illinois,22444dce,1210
 Bethel township,Illinois,bbc6a0a6,295
@@ -3832,7 +3810,6 @@ Chrisman city,Illinois,8e1069ea,1234
 Christopher city,Illinois,0e071d5f,2686
 Christy township,Illinois,894aaad3,3478
 Cicero town,Illinois,eb664dc0,79727
-Cicero township,Illinois,6556b422,79727
 Cincinnati township (Pike County),Illinois,5a96592e,25
 Cincinnati township (Tazewell County),Illinois,25196731,8830
 Cisco village,Illinois,daa2efd8,242
@@ -4073,7 +4050,6 @@ East Nelson township,Illinois,45e17b36,1040
 East Oakland township,Illinois,f4a4e926,1341
 East Peoria city,Illinois,ee020bbc,22344
 East St. Louis city,Illinois,12f909b4,25776
-East St. Louis township,Illinois,baf34e4d,25776
 Eastern township,Illinois,65edfcf2,556
 Easton village,Illinois,368c5b56,283
 Eddyville village,Illinois,f42c50a5,97
@@ -4248,7 +4224,6 @@ Freedom township (Carroll County),Illinois,160bf5e7,660
 Freedom township (LaSalle County),Illinois,7f794397,624
 Freeman Spur village,Illinois,acc834ff,276
 Freeport city,Illinois,c21da95b,23447
-Freeport township,Illinois,072d9cae,23447
 Fremont township,Illinois,fcdc3947,32377
 Friends Creek township,Illinois,ad18b385,1347
 Fulton city,Illinois,44725bfb,3285
@@ -5135,7 +5110,6 @@ Oak Brook village,Illinois,22446447,8046
 Oak Forest city,Illinois,476dd402,26884
 Oak Grove village,Illinois,b1b5b3c7,585
 Oak Lawn village,Illinois,196b2fcf,54376
-Oak Park township,Illinois,778807d5,51852
 Oak Park village,Illinois,b4d14639,51852
 Oakbrook Terrace city,Illinois,7869a61c,2094
 Oakdale township,Illinois,17da1692,568
@@ -5383,7 +5357,6 @@ Pulaski village,Illinois,b4d30640,169
 Putman township,Illinois,77b57ffb,1940
 Quarry township,Illinois,f78acccf,1153
 Quincy city,Illinois,9c38dd64,39589
-Quincy township,Illinois,3b320677,39589
 Quiver township,Illinois,a297e646,817
 Raccoon township,Illinois,d0ec0ed4,1478
 Radnor township,Illinois,9856672f,3460
@@ -5440,7 +5413,6 @@ Rio township,Illinois,d28c25f9,485
 Rio village,Illinois,872b861b,205
 Ripley township,Illinois,c247f9ea,97
 Ripley village,Illinois,d7d33df5,82
-River Forest township,Illinois,4c4a847e,10694
 River Forest village,Illinois,80031942,10694
 River Grove village,Illinois,2602330e,9771
 Riverdale village,Illinois,3da3d162,12912
@@ -5932,7 +5904,6 @@ Warren village,Illinois,e501c48f,1300
 Warrensburg village,Illinois,430ab6e8,1112
 Warrenville city,Illinois,54ea1896,13456
 Warsaw city,Illinois,132f70d8,1456
-Warsaw township,Illinois,e06c7f5b,1456
 Washburn village,Illinois,762ca549,1064
 Washington Park village,Illinois,82ed2341,3831
 Washington city,Illinois,8dce2683,16395
@@ -6086,7 +6057,6 @@ Zanesville township,Illinois,14031c4b,447
 Zeigler city,Illinois,d7156c9a,1671
 Zif township,Illinois,767afc88,94
 Zion city,Illinois,57c66492,23321
-Zion township,Illinois,a3bba471,23321
 Zuma township,Illinois,11e3a5c4,729
 Abington township,Indiana,d5fb8de0,799
 Aboite township,Indiana,ecb94c99,38657
@@ -20633,7 +20603,6 @@ East Hampton village,New York,8740b136,1138
 East Hills village,New York,3b675e34,7233
 East Nassau village,New York,2c08d45c,566
 East Otto town,New York,8f437994,1029
-East Rochester town,New York,fca9edbc,6458
 East Rochester village,New York,ad166550,6458
 East Rockaway village,New York,ae061736,9781
 East Syracuse village,New York,027743df,2907
@@ -20782,7 +20751,6 @@ Great Neck Plaza village,New York,45274adc,7006
 Great Neck village,New York,60877772,10162
 Great Valley town,New York,c3222332,1946
 Greece town,New York,9be27fbf,95285
-Green Island town,New York,5cc45b27,2879
 Green Island village,New York,1a97a24e,2879
 Greenburgh town,New York,c6d49ab4,90543
 Greene town,New York,739db337,4955
@@ -20831,7 +20799,6 @@ Harpersfield town,New York,2c2cbe49,1441
 Harrietstown town,New York,d91e4907,5423
 Harriman village,New York,6d785cfa,2421
 Harrisburg town,New York,71056cf3,424
-Harrison town,New York,10fdc835,28959
 Harrison village,New York,54f32dee,28959
 Harrisville village,New York,c6ef2841,599
 Hartford town,New York,f2386808,2172
@@ -21130,7 +21097,6 @@ Morristown town,New York,7fff7c9a,1895
 Morristown village,New York,9d5a26f3,376
 Morrisville village,New York,b2aae308,1733
 Mount Hope town,New York,5a80709f,6558
-Mount Kisco town,New York,37234fc6,10795
 Mount Kisco village,New York,8a7b7752,10795
 Mount Morris town,New York,764e0f3b,4144
 Mount Morris village,New York,7bd57829,2761
@@ -21463,7 +21429,6 @@ Saugerties town,New York,9481ef94,19002
 Saugerties village,New York,64ea5186,3793
 Savannah town,New York,472d2bcb,1644
 Savona village,New York,ab3ab75d,773
-Scarsdale town,New York,a11b4c2c,17785
 Scarsdale village,New York,4fed6e7c,17785
 Schaghticoke town,New York,7529e109,7454
 Schaghticoke village,New York,62f01ca3,573
@@ -22522,7 +22487,6 @@ Buchanan township,North Dakota,4d26e423,95
 Buckeye township,North Dakota,4a08a9f3,29
 Bucklin township,North Dakota,d41c8ac0,19
 Bucyrus city,North Dakota,ebeb8edb,24
-Bucyrus township,North Dakota,471de6fa,24
 Buena Vista township,North Dakota,359e86fc,19
 Buffalo city,North Dakota,41925db5,182
 Buffalo township,North Dakota,f5c1d730,79
