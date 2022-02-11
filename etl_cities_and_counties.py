@@ -33,6 +33,7 @@ def get_subset(x, code):
             [['name', 'state', 'id', 'pop_2020']]
 
 x = pd.read_csv('source_data/SUB-EST2020_ALL.csv', encoding='latin_1')
+counties_to_protect = pd.read_csv('counties_to_protect.csv')
 
 # Looking at Wikipedia, there seems to be a 2697-person Washington Township,
 # OH, labeled by county FIPS 159 as in Union County (which has another
@@ -229,6 +230,13 @@ assert len(caf_dupe_ids) == 0
 # Find ids of towns and townships that are shadowed by cities other entities so
 # we can deduplicate them: we look for all records where name, state, and
 # population are identical except for the last (city/village/town) word.
+#
+# TODO: This still leaves minor duplication, involving pairs with name subset
+# relationships or nearly so:
+# Bloomington City township,Illinois,1a721aef,77132
+# Bloomington city,Illinois,8774987a,77132
+# Champaign city,Illinois,f3e5ebfe,89390
+# Champaign City township,Illinois,afcad00b,89390
 caf_scratch = cities_and_friends.copy()
 caf_scratch['first_words'] = caf_scratch['name'].str.rsplit(n=1).str.get(0)
 caf_scratch['dupe_check_hash'] = caf_scratch.apply(dupe_check_hash, axis=1)
@@ -252,20 +260,25 @@ caf_deduped = cities_and_friends[
 caf_deduped.to_csv('cities.csv', header=True, index=False)
 counties.to_csv('counties.csv', header=True, index=False)
 
-# Finally: Virginia has identically named, coextensive city/county
-# jurisdictions, which we need to fix up in the merged city/county list.
-# drop_duplicates() here would not drop rows with different populations, so
-# this provides a sanity check.
-# TODO: There are yet more duplicates that might hamper an integrated
-# city/county database, such as a vestigial Philiadelphia County coextensive
-# with Philadelphia City.
+# There are 94 matches between the cities and counties on state and population.
+# Most represent coextensive city/county borders where the county is the
+# vestigial thing. They include important places (many Virginia cities;
+# Philadelphia; Washington, DC; etc.) In the city/county combined database, the
+# city-like thing should survive. But 27 of these are false matches. They are
+# curated by hand and protected.
 everything = pd.concat([caf_deduped, counties])\
     .drop_duplicates()\
     .sort_values(by=['state', 'name'], axis='index')
+counties_with_city_pop_match = set(pd.merge(
+    caf_deduped, counties, on=['state', 'pop_2020'], how='inner')['id_y']\
+    .values)
+county_ids_to_protect = set(counties_to_protect['id_y'].values)
+county_ids_to_drop = counties_with_city_pop_match - county_ids_to_protect
+everything_deduped = everything[~everything['id'].isin(county_ids_to_drop)]
 
 # Check primary key, the id, for duplicate ids with different populations.
-everything_counts = everything['id'].value_counts()
+everything_counts = everything_deduped['id'].value_counts()
 everything_dupe_ids = everything_counts[everything_counts > 1].index
 assert len(everything_dupe_ids) == 0
 
-everything.to_csv('cities_and_counties.csv', header=True, index=False)
+everything_deduped.to_csv('cities_and_counties.csv', header=True, index=False)
