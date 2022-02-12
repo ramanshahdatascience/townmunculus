@@ -264,7 +264,7 @@ counties.to_csv('counties.csv', header=True, index=False)
 # Most represent coextensive city/county borders where the county is the
 # vestigial thing. They include important places (many Virginia cities;
 # Philadelphia; Washington, DC; etc.) In the city/county combined database, the
-# city-like thing should survive. But 27 of these are false matches. They are
+# city-like thing should survive. But 26 of these are false matches. They are
 # curated by hand and protected.
 everything = pd.concat([caf_deduped, counties])\
     .drop_duplicates()\
