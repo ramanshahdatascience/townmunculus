@@ -12942,6 +12942,7 @@ Allegany County,Maryland,bf7f279d,70057
 Annapolis city,Maryland,69a11575,39524
 Anne Arundel County,Maryland,fb8bd25d,582777
 Baltimore County,Maryland,6b102a96,826017
+Baltimore city,Maryland,98e4bda5,586131
 Barclay town,Maryland,5cefd8e9,165
 Barnesville town,Maryland,5fa2cdbe,178
 Barton town,Maryland,c59f8130,419
@@ -19622,6 +19623,7 @@ St. James city,Missouri,8692abf3,4006
 St. John city,Missouri,0c7ce889,6319
 St. Joseph city,Missouri,6a7b8077,74074
 St. Louis County,Missouri,914425de,994020
+St. Louis city,Missouri,da0f2ac2,297645
 St. Martins city,Missouri,6dbd2ee1,1204
 St. Mary city,Missouri,2370a579,345
 St. Paul city,Missouri,bf09267f,2796
@@ -20990,6 +20992,7 @@ Zero township,Nebraska,15323e5f,270
 Boulder City city,Nevada,496f912f,16410
 Caliente city,Nevada,d01d2504,1077
 Carlin city,Nevada,6bbf613d,2281
+Carson City,Nevada,76432ccb,56034
 Churchill County,Nevada,963a60f8,25363
 Clark County,Nevada,adf7a7bc,2315963
 Douglas County,Nevada,bf8fc9fe,49088
@@ -36151,6 +36154,7 @@ Accomac town,Virginia,aa3bfa16,482
 Accomack County,Virginia,62593226,32238
 Albemarle County,Virginia,2fb4b0fe,110652
 Alberta town,Virginia,6203fd99,265
+Alexandria city,Virginia,2619bb9a,158726
 Alleghany County,Virginia,fcbb6cda,14701
 Altavista town,Virginia,e13ac64f,3422
 Amelia County,Virginia,a59d002b,13014
@@ -36181,6 +36185,7 @@ Boydton town,Virginia,e9cf467d,410
 Boykins town,Virginia,6615da08,525
 Branchville town,Virginia,2cc5f64d,115
 Bridgewater town,Virginia,a68792db,6162
+Bristol city,Virginia,9cc9f10b,17329
 Broadway town,Virginia,b295f139,3995
 Brodnax town,Virginia,5817e1fd,265
 Brookneal town,Virginia,fd28c4e7,1104
@@ -36188,6 +36193,7 @@ Brunswick County,Virginia,b0559969,16037
 Buchanan County,Virginia,aacd1651,20613
 Buchanan town,Virginia,67ffe8ef,1182
 Buckingham County,Virginia,432dc457,17168
+Buena Vista city,Virginia,5d8c0de4,6402
 Burkeville town,Virginia,c26fd433,398
 Campbell County,Virginia,2abb2026,55304
 Cape Charles town,Virginia,205604ab,1056
@@ -36198,9 +36204,11 @@ Cedar Bluff town,Virginia,ffc13c02,998
 Charles City County,Virginia,a1cdbe6c,6821
 Charlotte County,Virginia,7ae4faa7,11820
 Charlotte Court House town,Virginia,6ee91d51,507
+Charlottesville city,Virginia,c92d9fba,46950
 Chase City town,Virginia,1083c05f,2217
 Chatham town,Virginia,8c0b0a91,1413
 Cheriton town,Virginia,406b50e4,444
+Chesapeake city,Virginia,4691ae23,247011
 Chesterfield County,Virginia,c7f83a53,358245
 Chilhowie town,Virginia,362421cc,1698
 Chincoteague town,Virginia,9954ddba,2866
@@ -36216,7 +36224,9 @@ Clinchport town,Virginia,57d409ac,65
 Clintwood town,Virginia,df41b52d,1264
 Coeburn town,Virginia,8549f8cc,1835
 Colonial Beach town,Virginia,7b429178,3645
+Colonial Heights city,Virginia,4cb07100,17205
 Courtland town,Virginia,08f8b53b,1214
+Covington city,Virginia,43aee2fa,5639
 Craig County,Virginia,c2ced9a8,5077
 Craigsville town,Virginia,1d78c248,942
 Crewe town,Virginia,f717b650,2116
@@ -36224,6 +36234,7 @@ Culpeper County,Virginia,02007201,53569
 Culpeper town,Virginia,f795de06,19214
 Cumberland County,Virginia,ea9a0661,9933
 Damascus town,Virginia,c694daff,775
+Danville city,Virginia,9bf38938,39869
 Dayton town,Virginia,b71a9f63,1642
 Dendron town,Virginia,cf8eb1ac,246
 Dickenson County,Virginia,e37e172e,14078
@@ -36237,9 +36248,12 @@ Dungannon town,Virginia,4776d5b1,299
 Eastville town,Virginia,4d2ab55f,345
 Edinburg town,Virginia,cbd23be0,1078
 Elkton town,Virginia,41f6cbba,2914
+Emporia city,Virginia,77554585,5257
 Essex County,Virginia,571b5b4f,10943
 Exmore town,Virginia,1a6741f3,1362
 Fairfax County,Virginia,9a6265d3,1150847
+Fairfax city,Virginia,161e7057,23429
+Falls Church city,Virginia,3cfe7952,14631
 Farmville town,Virginia,83e0f573,7842
 Fauquier County,Virginia,67096bc7,71361
 Fincastle town,Virginia,c2c3cf31,341
@@ -36247,9 +36261,12 @@ Floyd County,Virginia,b2eb0da8,15777
 Floyd town,Virginia,fd455548,444
 Fluvanna County,Virginia,b4b30597,27422
 Franklin County,Virginia,a9d5abcd,56167
+Franklin city,Virginia,2286f752,7833
 Frederick County,Virginia,01b5b9e3,91119
+Fredericksburg city,Virginia,5b4eb4c9,29492
 Fries town,Virginia,34a5bae3,444
 Front Royal town,Virginia,60c778d4,15389
+Galax city,Virginia,311647fc,6296
 Gate City town,Virginia,92982c86,1867
 Giles County,Virginia,b9fed1d8,16663
 Glade Spring town,Virginia,5de4f349,1402
@@ -36269,7 +36286,9 @@ Halifax County,Virginia,681dba10,33633
 Halifax town,Virginia,c1dc99eb,1200
 Hallwood town,Virginia,4cf6a25e,199
 Hamilton town,Virginia,c647051a,630
+Hampton city,Virginia,4c9b1e22,135464
 Hanover County,Virginia,0aa12873,108262
+Harrisonburg city,Virginia,b0d450e0,53204
 Haymarket town,Virginia,b3b12d58,1687
 Haysi town,Virginia,12ec15ec,460
 Henrico County,Virginia,4184ba71,333766
@@ -36279,6 +36298,7 @@ Highland County,Virginia,afe6f7dc,2200
 Hillsboro town,Virginia,f53a6444,169
 Hillsville town,Virginia,42667978,2686
 Honaker town,Virginia,c1587fba,1322
+Hopewell city,Virginia,8b7af97d,22375
 Hurt town,Virginia,77333d3a,1211
 Independence town,Virginia,3778b6ca,887
 Iron Gate town,Virginia,d431c486,352
@@ -36301,15 +36321,20 @@ Lawrenceville town,Virginia,90a5c7c9,1003
 Lebanon town,Virginia,ef95362b,3184
 Lee County,Virginia,a814e3dc,23238
 Leesburg town,Virginia,06d6f1f4,54488
+Lexington city,Virginia,f993fdc2,7279
 Loudoun County,Virginia,83b3fea3,422784
 Louisa County,Virginia,c0806f49,38132
 Louisa town,Virginia,c8450fdc,1764
 Lovettsville town,Virginia,9b07fd8c,2267
 Lunenburg County,Virginia,cea201f3,12267
 Luray town,Virginia,dee0940e,4849
+Lynchburg city,Virginia,7a23b27b,81561
 Madison County,Virginia,4346922f,13312
 Madison town,Virginia,c7de3583,238
+Manassas Park city,Virginia,9423b8fc,18004
+Manassas city,Virginia,8b31de65,40869
 Marion town,Virginia,0bed914c,5555
+Martinsville city,Virginia,eba00f0a,12355
 Mathews County,Virginia,35c8da49,8766
 McKenney town,Virginia,5176bf34,490
 Mecklenburg County,Virginia,3d5b0dd1,30679
@@ -36329,10 +36354,13 @@ Nelson County,Virginia,dda735c3,14755
 New Castle town,Virginia,05ca2440,155
 New Kent County,Virginia,1dfe026f,23648
 New Market town,Virginia,1b0a9700,2268
+Newport News city,Virginia,77c74e78,179062
 Newsoms town,Virginia,fc4e6c39,298
 Nickelsville town,Virginia,f0bbc944,362
+Norfolk city,Virginia,f7c51c22,242803
 Northampton County,Virginia,e7118ea6,11673
 Northumberland County,Virginia,d4f5e8b8,12069
+Norton city,Virginia,1df13abc,3985
 Nottoway County,Virginia,44697561,15160
 Occoquan town,Virginia,a07f30a8,1097
 Onancock town,Virginia,dc5a60db,1205
@@ -36347,10 +36375,13 @@ Patrick County,Virginia,0b029b9e,17493
 Pearisburg town,Virginia,21cab0d2,2620
 Pembroke town,Virginia,33e79901,1077
 Pennington Gap town,Virginia,b3c28066,1708
+Petersburg city,Virginia,86222a87,30446
 Phenix town,Virginia,c0eebee1,211
 Pittsylvania County,Virginia,44740a44,59850
 Pocahontas town,Virginia,e646fe5e,348
+Poquoson city,Virginia,bc878a24,12257
 Port Royal town,Virginia,1de98a3d,207
+Portsmouth city,Virginia,32862183,95094
 Pound town,Virginia,3b337220,917
 Powhatan County,Virginia,5740c196,30148
 Prince Edward County,Virginia,bb7eeca8,23006
@@ -36360,19 +36391,23 @@ Pulaski County,Virginia,f010d252,33935
 Pulaski town,Virginia,c35b1dce,8657
 Purcellville town,Virginia,fe7f8ff4,10285
 Quantico town,Virginia,4b35fdd3,558
+Radford city,Virginia,863af316,18255
 Rappahannock County,Virginia,4c06863b,7260
 Remington town,Virginia,f055438a,661
 Rich Creek town,Virginia,15692a84,738
 Richlands town,Virginia,f74771e6,5224
 Richmond County,Virginia,cb9ce8c4,9071
+Richmond city,Virginia,a02ea2ce,232226
 Ridgeway town,Virginia,eb6b87a4,688
 Roanoke County,Virginia,29b1ddc2,94509
+Roanoke city,Virginia,ff230edb,99058
 Rockbridge County,Virginia,1b15b858,22757
 Rockingham County,Virginia,769eccf6,82346
 Rocky Mount town,Virginia,a1cdf965,4712
 Round Hill town,Virginia,c459d23e,657
 Rural Retreat town,Virginia,b41dc1c3,1448
 Russell County,Virginia,2be5eca3,26647
+Salem city,Virginia,c242bff9,25340
 Saltville town,Virginia,47541259,1895
 Saxis town,Virginia,bc8ea836,230
 Scott County,Virginia,b182f04f,21629
@@ -36391,10 +36426,12 @@ St. Paul town,Virginia,44ac86c0,847
 Stafford County,Virginia,da82c5e5,156748
 Stanardsville town,Virginia,bb9e454c,393
 Stanley town,Virginia,8a9a7387,1676
+Staunton city,Virginia,8f9af604,25190
 Stephens City town,Virginia,dc9a6daa,2106
 Stony Creek town,Virginia,f3e89c4a,173
 Strasburg town,Virginia,080dc48b,6716
 Stuart town,Virginia,8bb5e81e,1261
+Suffolk city,Virginia,78ddbc93,93913
 Surry County,Virginia,3950e1bd,6385
 Surry town,Virginia,6d238ab0,215
 Sussex County,Virginia,38d818e6,10925
@@ -36412,6 +36449,7 @@ Victoria town,Virginia,2062455f,1632
 Vienna town,Virginia,dd2f85f5,16518
 Vinton town,Virginia,1fb8b3f3,8128
 Virgilina town,Virginia,f2c33d46,135
+Virginia Beach city,Virginia,693bdbcb,451231
 Wachapreague town,Virginia,8d737ca3,221
 Wakefield town,Virginia,d6201074,805
 Warren County,Virginia,03421569,40475
@@ -36420,10 +36458,13 @@ Warsaw town,Virginia,39bcbaf9,1490
 Washington County,Virginia,9b97d175,53695
 Washington town,Virginia,5ca184cb,122
 Waverly town,Virginia,5279cc2c,1905
+Waynesboro city,Virginia,d6c73f43,22741
 Weber City town,Virginia,d8685bcb,1214
 West Point town,Virginia,c1413933,3310
 Westmoreland County,Virginia,8d30288e,18149
 White Stone town,Virginia,319e0d32,331
+Williamsburg city,Virginia,da4b5d83,15259
+Winchester city,Virginia,11c2ed65,27700
 Windsor town,Virginia,00fd2469,2800
 Wise County,Virginia,1b8a3f80,37206
 Wise town,Virginia,2b61fe87,2885

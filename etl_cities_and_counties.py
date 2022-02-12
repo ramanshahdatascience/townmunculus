@@ -270,8 +270,11 @@ counties.to_csv('counties.csv', header=True, index=False)
 everything = pd.concat([caf_deduped, counties])\
     .drop_duplicates()\
     .sort_values(by=['state', 'name'], axis='index')
-counties_with_city_pop_match = set(pd.merge(
-    caf_deduped, counties, on=['state', 'pop_2020'], how='inner')['id_y']\
+cc_dupe_candidates = pd.merge(
+    caf_deduped, counties, on=['state', 'pop_2020'], how='inner')
+counties_with_city_pop_match = set(cc_dupe_candidates\
+    [cc_dupe_candidates['id_x'] != cc_dupe_candidates['id_y']]\
+    ['id_y']\
     .values)
 county_ids_to_protect = set(counties_to_protect['id_y'].values)
 county_ids_to_drop = counties_with_city_pop_match - county_ids_to_protect
