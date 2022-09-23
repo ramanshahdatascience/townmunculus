@@ -34,7 +34,6 @@ def get_subset(x, code):
 
 x = pd.read_csv('source_data/SUB-EST2020_ALL.csv', encoding='latin_1')
 counties_to_protect = pd.read_csv('counties_to_protect.csv')
-towns_to_exclude = pd.read_csv('towns_to_exclude.csv')
 
 # Looking at Wikipedia, there seems to be a 2697-person Washington Township,
 # OH, labeled by county FIPS 159 as in Union County (which has another
@@ -247,13 +246,6 @@ for key, group in caf_scratch.groupby('dupe_check_hash'):
             ids_to_exclude.append(group.iloc[1]['id'])
         else:
             raise Exception()
-
-# Manually clean up the coterminous townships of population >=4k, because they
-# don't follow a completely regular pattern. The big ones are are substantial
-# places in Illinois (Champaign, Bloomington, Urbana, Galesburg, Macomb City).
-# At time of writing, searching all duplication suspects of population >= 4k, I
-# found only 6 such townships.
-ids_to_exclude.extend(towns_to_exclude['id'].values)
 
 caf_deduped = cities_and_friends[
     ~cities_and_friends['id'].isin(ids_to_exclude)]
